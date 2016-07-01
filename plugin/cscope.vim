@@ -420,7 +420,7 @@ function! s:cscope_vim_connect_db()
     " 1) kill all the cscope db connections, if any.
     cs kill -1
     
-    let l:current_path = <SID>cscope_vim_unify_path(expand('%:p:h'))
+    let l:current_path = <SID>cscope_vim_unify_path(getcwd())
     let l:project_root = <SID>cscope_vim_get_project_root(l:current_path)
 
     " 2) if the current file is not a part of any project, stop.
@@ -449,7 +449,7 @@ function! s:cscope_vim_connect_db()
     " 3.3) if db exists, connect to it, stop
     if g:cscope_search_case_insensitive == 1
         exe 'cs add '.l:db_file_name.' '.l:db_prepend.' -C'
-        echo 'cscope db '.l:db_file_name.' added, working in case-insensitive mode.'
+        echo 'cscope db '.l:db_file_name.' '.l:db_prepend.' added, working in case-insensitive mode.'
     else
         exe 'cs add '.l:db_file_name.' '.l:db_prepend
         echo 'cscope db '.l:db_file_name.' added, working in case-sensitive mode.'
@@ -466,6 +466,8 @@ function! s:cscope_vim_unify_path(path_non_unified)
     let l:path_unified = substitute(a:path_non_unified, '\\', '/', 'g')
     let l:path_unified = substitute(l:path_unified, '/\+$', '', '')
     let l:path_unified = substitute(l:path_unified, "\/\\s*$", '', 'g')
+
+    return l:path_unified
 
     return tolower(l:path_unified)
 endfunction
