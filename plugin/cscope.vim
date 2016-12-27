@@ -512,13 +512,13 @@ else
     let g:cscope_common_project_root = <sid>cscope_vim_unify_path(g:cscope_common_project_root)
 endif
 
-command! -nargs=0 CscopeConnectDb                  call <SID>cscope_vim_connect_db()
-command! -nargs=0 CscopeClearAllDb                 call <SID>cscope_vim_clear_db(-1)
-command! -nargs=0 CscopeClearCurrentDb             call <SID>cscope_vim_clear_db(0)
-command! -nargs=0 CscopeList                       call <SID>cscope_vim_list_db()
-command! -nargs=0 CscopeRebuildDb                  call <SID>cscope_vim_rebuild_current_db()
-command! -nargs=0 CscopeUpdateDb                   call <SID>cscope_vim_update_current_db(0)
-command! -nargs=0 CscopeUpdateDbAndFilelist        call <SID>cscope_vim_update_current_db(1)
+" command! -nargs=0 CscopeConnectDb                  call <SID>cscope_vim_connect_db()
+" command! -nargs=0 CscopeClearAllDb                 call <SID>cscope_vim_clear_db(-1)
+" command! -nargs=0 CscopeClearCurrentDb             call <SID>cscope_vim_clear_db(0)
+" command! -nargs=0 CscopeList                       call <SID>cscope_vim_list_db()
+" command! -nargs=0 CscopeRebuildDb                  call <SID>cscope_vim_rebuild_current_db()
+" command! -nargs=0 CscopeUpdateDb                   call <SID>cscope_vim_update_current_db(0)
+" command! -nargs=0 CscopeUpdateDbAndFilelist        call <SID>cscope_vim_update_current_db(1)
 
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
-call <sid>cscope_vim_load_index()
+" call <sid>cscope_vim_load_index()
